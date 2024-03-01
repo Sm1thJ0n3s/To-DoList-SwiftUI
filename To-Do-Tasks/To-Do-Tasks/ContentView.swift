@@ -17,16 +17,17 @@ struct ContentView: View {
         
         NavigationStack {
             VStack {
-                HStack {
-                    // Shows user the number of tasks that is created
-                    Text("Tasks: \(numOfTasks)")
-                        .padding()
-                    // Shows the number of tasks that is completed
-                    Text("Tasks Completed: \(completedTasks)")
-                        .padding()
-                }
+                // Shows user the number of tasks that is created
+                Text("Number of Tasks: \(numOfTasks)")
+                    .padding()
+                    .position(x: 90, y: 30)
+                // Shows the number of tasks that is completed
+                Text("Tasks Completed: \(completedTasks)")
+                    .padding()
+                    .position(x: 90, y: -10)
             // Where users enter what they need to do
                 TextField("Enter a new task", text: $task)
+                    .position(x: 180, y: -20)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 HStack {
                     Button("Add Task", action:{
@@ -48,7 +49,7 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .cornerRadius(5)
                 }
-                .padding()
+                .position(x: 180, y: -40)
             }
             .navigationTitle("To-Do List")
             // This list was created for allowing users to delete tasks. Users can also slide the task when the task is completed which deletes the task
@@ -90,7 +91,7 @@ struct ContentView: View {
                     }
                 })
             }
-
+            .position(x: 180, y: 80)
 
             }
         .padding()
